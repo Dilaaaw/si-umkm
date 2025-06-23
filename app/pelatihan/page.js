@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import firebaseApp from '@/lib/firebase';
+import SearchPelatihanClient from '../../components/SearchPelatihanClient';
 
 export default function DaftarPelatihan() {
   const [pelatihanList, setPelatihanList] = useState([]);
@@ -11,6 +12,7 @@ export default function DaftarPelatihan() {
   const [error, setError] = useState(null);
   const [user, setUser] = useState(null);
 
+  // Cek user login
   useEffect(() => {
     const auth = getAuth(firebaseApp);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -26,6 +28,7 @@ export default function DaftarPelatihan() {
     return () => unsubscribe();
   }, []);
 
+  // Ambil daftar pelatihan default
   useEffect(() => {
     const fetchPelatihan = async () => {
       try {
@@ -49,6 +52,10 @@ export default function DaftarPelatihan() {
           📚 Daftar Pelatihan UMKM
         </h1>
 
+        {/* 🔍 Fitur pencarian dengan GraphQL */}
+        <SearchPelatihanClient />
+
+        {/* Default list pelatihan (REST API) */}
         {loading && (
           <p className="text-center text-gray-500">⏳ Memuat daftar pelatihan...</p>
         )}
@@ -70,7 +77,9 @@ export default function DaftarPelatihan() {
                 📅 {new Date(item.tanggal).toLocaleDateString('id-ID')}
               </p>
               <p className="text-sm text-gray-600 mb-2">🏛️ {item.penyelenggara}</p>
-              <p className="text-gray-800 mb-3 line-clamp-3">{item.deskripsi || 'Tidak ada deskripsi.'}</p>
+              <p className="text-gray-800 mb-3 line-clamp-3">
+                {item.deskripsi || 'Tidak ada deskripsi.'}
+              </p>
               <Link
                 href={`/pelatihan/${item._id}`}
                 className="inline-block bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded text-sm font-semibold"

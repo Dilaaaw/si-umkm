@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import firebaseApp from '@/lib/firebase';
-
+import Link from 'next/link';
 export default function DetailPelatihanClient() {
   const { id } = useParams();
   const [pelatihan, setPelatihan] = useState(null);

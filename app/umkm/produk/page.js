@@ -100,7 +100,7 @@ export default function ProdukSaya() {
           placeholder="Ketik nama produk..."
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
-          className="w-full p-2 border border-gray-300 rounded mb-6"
+          className="w-full p-2 border text-pink-700ko border-gray-300 rounded mb-6"
         />
 
         <div className="flex justify-between items-center mb-6">
