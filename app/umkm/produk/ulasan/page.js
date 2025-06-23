@@ -38,7 +38,7 @@ export default function UlasanPage() {
             <li key={u.ulasanId} className="p-4 border rounded shadow bg-pink-50 text-black">
               <p className="font-semibold">{u.nama} memberikan rating ⭐ {u.rating}</p>
               <p className="text-gray-600 text-sm italic">Untuk produk: <b>{u.namaProduk}</b></p>
-              <p className="text-gray-800 italic mb-2">"{u.komentar}"</p>
+              <p className="text-gray-800 italic mb-2">&quot;{u.komentar}&quot;</p>
 
               {u.balasan && (
                 <p className="mt-2 text-sm text-green-600">
