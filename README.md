@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💼 Si-UMKM – Sistem Informasi Layanan UMKM
 
-## Getting Started
+Sistem Informasi Layanan UMKM (Si-UMKM) adalah platform berbasis web yang dibangun untuk memfasilitasi pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) dalam mempromosikan produk, mengikuti pelatihan, serta mendapatkan pembinaan dari pemerintah.
 
-First, run the development server:
+Proyek ini dibangun sebagai bagian dari kolaborasi antara pemerintah kota dan startup teknologi.
 
+---
+
+## 🚀 Fitur Utama
+
+### 🔐 Autentikasi & Otorisasi
+- Login UMKM via Firebase Authentication
+- Login Admin via JWT
+- OAuth Login Google
+
+### 🛍️ Manajemen Produk
+- Tambah, edit, hapus produk (khusus UMKM)
+- Unggah gambar produk via Imgbb / Cloudinary
+- Lihat daftar produk publik
+- Detail produk + ulasan & rating
+
+### 🗣️ Ulasan & Rating
+- Pengunjung bisa beri ulasan & rating
+
+### 🎓 Pelatihan & Pembinaan
+- Daftar pelatihan online
+- Lihat detail program
+- Dashboard admin kelola pelatihan
+
+### 📊 Dashboard Admin
+- Statistik grafik produk, pelatihan, ulasan
+- CRUD data pelatihan dan verifikasi konten
+
+### 🌐 Rendering & Security
+- Rendering: CSR, SSR, ISR
+- Proteksi XSS & CSRF
+- Middleware route protection
+
+### ⚙️ Teknologi
+- Next.js App Router
+- MongoDB + Mongoose
+- Firebase Admin SDK
+- GraphQL (Apollo)
+- REST API Routes
+- Tailwind CSS + SweetAlert2
+- Testing: Jest + Testing Library
+
+---
+
+## ⚒️ Instalasi & Jalankan Lokal
+
+### 1. Clone Repo
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/Dilaaaw/si-umkm.git
+cd si-umkm
