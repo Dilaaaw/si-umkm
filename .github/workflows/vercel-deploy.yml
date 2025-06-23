@@ -1,35 +1,27 @@
-name: Si-UMKM CI/CD
+name: CI/CD Workflow
 
 on:
   push:
-    branches:
-      - main
-      - dev
-  pull_request:
+    branches: [main]
 
 jobs:
-  lint-and-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Run Lint
+      - name: Run lint
         run: npm run lint
-
-      # Kalau nanti kamu punya testing (misalnya Jest), aktifkan ini:
-      # - name: Run Test
-      #   run: npm test
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
